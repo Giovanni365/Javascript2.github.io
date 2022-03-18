@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1>--- Pemilihan Karakter Tebaik ---</h1>
+        <p>Siapa Karakter Progate favorit Anda?</p>
+    </div>
+    <div class="contents">
+        <div class="character">
+            <div class="image">
+                <img src = "D:\Giovanni\JavaScript Lesson\Tugas 2\baby_ben.png" alt="baby_ben"/>
+                <button id="btn-ben" class="btn btn-image">Baby Ben</button>
+            </div>
+            <div class="image">
+                <img src = "D:\Giovanni\JavaScript Lesson\Tugas 2\ninja_ken.png" alt="ninja_ken"/>
+                <button id="btn-ken" class="btn btn-image">Ninja Ken</button>
+            </div>
+            <div class="image">
+                <img src = "D:\Giovanni\JavaScript Lesson\Tugas 2\guru_domba.png" alt="guru_domba"/>
+                <button id="btn-domba" class="btn btn-image">Guru Domba</button>
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <div class="input">
+            <p>Alasan:</p>
+            <textarea name="alasan" id="alasan" rows="S" value=""></textarea>
+            <button class="btn btn-submit" onclick="submit()">Kumpulkan</button>
+        </div>
+        <div class="result">
+            <p>Hasil</p>
+            <div class="result-char">
+                <p>Karakter yang disukai <span class="charname"></span></p>
+                <p>Alasan: <span class="display-result"></span></p>
+                <textarea></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+const buttons = document.getElementsByClassName("btn-image");
+for (let index=0; index < buttons.length; index ++) {
+    const element = buttons[index];
+    element.addEventListener("click", function () {
+        let charname = this.textContent;
+        let alasan = `Saya suka ${charname} karena ...`;
+        document.getElementById("alasan").value = alasan;
+    });
+}
+
+const submit = () => {
+    const alasanTampil = document.querySelector ("diplay-result");
+    alasanTampil.innerHTML = document.getElementById("alasan").value;
+    tombol.forEach((active) => {
+        active.classList.remove("active");
+    });
+};
+</script>
+</html>
